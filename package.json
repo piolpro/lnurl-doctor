@@ -1,0 +1,29 @@
+{
+  "name": "lnurl-doctor",
+  "version": "0.1.0",
+  "description": "Diagnose Lightning addresses and LNURL-pay endpoints",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "bin": { "lnurl-doctor": "./dist/cli.js" },
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "docs", "CHANGELOG.md", "CONTRIBUTING.md"],
+  "repository": { "type": "git", "url": "https://github.com/piolpro/lnurl-doctor.git" },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "lint": "eslint src test",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test"
+  },
+  "dependencies": {
+    "bech32": "^2.0.0",
+    "light-bolt11-decoder": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "eslint": "~9.39.0",
+    "typescript": "~5.9.0",
+    "typescript-eslint": "~8.56.0"
+  }
+}
